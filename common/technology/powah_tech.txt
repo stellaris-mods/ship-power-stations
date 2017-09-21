@@ -1,0 +1,138 @@
+# The reason we use our own tech tree is so that the vanilla
+# reactor component technologies don't get flooded with power station
+# components in the research description.
+# Since we add like 50 different power stations based on ship hull sizes
+# per reactor level.
+
+# fission
+tech_powah_1 = {
+	cost = 0
+	area = engineering
+	start_tech = yes
+	weight = 0
+	category = { voidcraft }
+	tier = 0
+	ai_update_type = all
+	is_reverse_engineerable = no
+	prerequisites = { "tech_fission_power" }
+	prereqfor_desc = {
+		component = {
+			title = "tech_unlock_powah_1"
+			desc = "FISSION_REACTOR_DESC"
+		}
+	}
+	weight_modifier = {
+		factor = 0
+	}
+	ai_weight = { factor = 0 }
+}
+
+# fusion
+tech_powah_2 = {
+	cost = 0
+	area = engineering
+	weight = 0
+	category = { voidcraft }
+	tier = 1
+	ai_update_type = all
+	is_reverse_engineerable = no
+	prerequisites = { "tech_fusion_power" }
+	prereqfor_desc = {
+		component = {
+			title = "tech_unlock_powah_2"
+			desc = "FUSION_REACTOR_DESC"
+		}
+	}
+	weight_modifier = {
+		factor = 0
+	}
+	ai_weight = { factor = 0 }
+}
+
+# cold fusion
+tech_powah_3 = {
+	cost = 0
+	area = engineering
+	weight = 0
+	category = { voidcraft }
+	tier = 2
+	ai_update_type = all
+	is_reverse_engineerable = no
+	prerequisites = { "tech_cold_fusion_power" }
+	prereqfor_desc = {
+		component = {
+			title = "tech_unlock_powah_3"
+			desc = "COLD_FUSION_REACTOR"
+		}
+	}
+	weight_modifier = {
+		factor = 0
+	}
+	ai_weight = { factor = 0 }
+}
+
+# antimatter
+tech_powah_4 = {
+	cost = 0
+	area = engineering
+	weight = 0
+	category = { voidcraft }
+	tier = 3
+	ai_update_type = all
+	is_reverse_engineerable = no
+	prerequisites = { "tech_antimatter_power" }
+	prereqfor_desc = {
+		component = {
+			title = "tech_unlock_powah_4"
+			desc = "ANTIMATTER_REACTOR_DESC"
+		}
+	}
+	weight_modifier = {
+		factor = 0
+	}
+	ai_weight = { factor = 0 }
+}
+
+# zero point
+tech_powah_5 = {
+	cost = 0
+	area = engineering
+	weight = 0
+	category = { voidcraft }
+	tier = 3
+	ai_update_type = all
+	is_reverse_engineerable = no
+	prerequisites = { "tech_zero_point_power" }
+	prereqfor_desc = {
+		component = {
+			title = "tech_unlock_powah_5"
+			desc = "ZERO_POINT_REACTOR_DESC"
+		}
+	}
+	weight_modifier = {
+		factor = 0
+	}
+	ai_weight = { factor = 0 }
+}
+
+# enigmatic
+tech_powah_6 = {
+	cost = 0
+	area = engineering
+	weight = 0
+	category = { voidcraft }
+	tier = 3
+	ai_update_type = all
+	is_reverse_engineerable = no
+	prerequisites = { "tech_enigmatic_power_core" }
+	prereqfor_desc = {
+		component = {
+			title = "tech_unlock_powah_6"
+			desc = "tech_enigmatic_power_core_desc"
+		}
+	}
+	weight_modifier = {
+		factor = 0
+	}
+	ai_weight = { factor = 0 }
+}

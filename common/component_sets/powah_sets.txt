@@ -1,0 +1,6 @@
+component_set = {
+	key = "powerstation_components"
+	icon = "GFX_ship_part_hyperdrive"
+	icon_frame = 1
+	required_component_set = yes
+}

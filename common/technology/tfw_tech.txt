@@ -1,0 +1,85 @@
+tech_fusion_power_energon = {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { particles }
+	prerequisites = { "tech_zero_point_power" }
+	weight = 0
+	is_reverse_engineerable = no
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_antimatter_power_optimized = {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { particles }
+	prerequisites = { "tech_fusion_power_energon" }
+	weight = 0
+	is_reverse_engineerable = no
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_darkmatter_power= {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { particles }
+	prerequisites = { "tech_antimatter_power_optimized" }
+	weight = 0
+	is_reverse_engineerable = no
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_darkmatter_power_optimized= {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { particles }
+	prerequisites = { "tech_darkmatter_power" }
+	weight = 0
+	is_reverse_engineerable = no
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_singularity_power = {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { particles }
+	prerequisites = { "tech_darkmatter_power_optimized" }
+	weight = 0
+	is_reverse_engineerable = no
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_tachyon_power = {
+	area = physics
+	cost = 0
+	tier = 0
+	is_rare = yes
+	category = { particles }
+	prerequisites = { "tech_singularity_power" }
+	weight = 0
+	is_reverse_engineerable = no
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_wimp_power = {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { particles }
+	is_rare = yes
+	prerequisites = { "tech_tachyon_power" }
+	weight = 0
+	is_reverse_engineerable = no
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}

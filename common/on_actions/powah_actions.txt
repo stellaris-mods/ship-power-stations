@@ -1,0 +1,20 @@
+# A country has increased the level of a tech, use last_increased_tech trigger to check tech and level.
+# This = Country
+
+# yes yes I know I could use one event, but last_increased_tech can't be used in a switch statement
+# so who the fuck cares
+on_tech_increased = {
+	events = {
+		powah.1
+		powah.2
+		powah.3
+		powah.4
+		powah.5
+		powah.6
+		powah.100
+		powah.101
+		powah.102
+		powah.103
+		powah.201
+	}
+}
