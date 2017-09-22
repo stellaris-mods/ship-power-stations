@@ -128,42 +128,42 @@ local unsortedData = {
 	{ -- NSC
 		power = 40,
 		cost = 1.143,
-		tech = "tech_graviton_power",
+		tech = "tech_graviton_power_fake",
 		icons = "GFX_ship_part_reactor_6_NSC",
 		name = "Graviton Station",
 	},
 	{ -- NSC
 		power = 50,
 		cost = 1.111,
-		tech = "tech_dark_matter_power",
+		tech = "tech_dark_matter_power_fake",
 		icons = "GFX_ship_part_reactor_7_NSC",
 		name = "Dark Matter Station",
 	},
 	{ -- NSC
 		power = 60,
 		cost = 1.091,
-		tech = "tech_adv_zero_point_power",
+		tech = "tech_adv_zero_point_power_fake",
 		icons = "GFX_ship_part_reactor_8_NSC",
 		name = "Singularity Station",
 	},
 	{ -- NSC
 		power = 70,
 		cost = 1.077,
-		tech = "tech_multidimensional_power",
+		tech = "tech_multidimensional_power_fake",
 		icons = "GFX_ship_part_reactor_9_NSC",
 		name = "Multidimensional Station",
 	},
 	{ -- NSC
 		power = 80,
 		cost = 1.066,
-		tech = "tech_nsc_zero_point_power",
+		tech = "tech_nsc_zero_point_power_fake",
 		icons = "GFX_ship_part_reactor_10_NSC",
 		name = "Zero Point Station",
 	},
 	{ -- NSC
 		power = 100,
 		cost = 1.053,
-		tech = "tech_optimized_enigmatic_power",
+		tech = "tech_optimized_enigmatic_power_fake",
 		icons = "GFX_ship_part_reactor_11_enigmatic_NSC",
 		name = "Optimized Enigmatic Station"
 	}
