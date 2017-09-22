@@ -89,7 +89,7 @@ country_event = {
 
 	immediate = {
 		give_technology = {
-			tech = "tech_nsc_zero_point_power"
+			tech = "tech_nsc_zero_point_power_fake"
 			message = no
 		}
 	}
