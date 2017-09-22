@@ -7,12 +7,12 @@
 @corvette_collision_radius = 2.0
 @corvette_formation_priority = 3
 
-@destroyer_combat_speed = 1.25	 # picket ships
+@destroyer_combat_speed = 1.50	 # picket ships
 @destroyer_combat_rotation = 0.05
 @destroyer_collision_radius = 2.5
 @destroyer_formation_priority = 2
 
-@cruiser_combat_speed = 1.25	 # picket/assault ships
+@cruiser_combat_speed = 1.25	 # ships of the line
 @cruiser_combat_rotation = 0.035
 @cruiser_collision_radius = 3
 @cruiser_formation_priority = 1
@@ -76,7 +76,7 @@ destroyer = {
 		ship_armor_add = 12
 		ship_evasion_add = 25
 	}
-	max_hitpoints = 600
+	max_hitpoints = 800
 	size_multiplier = 2
 	fleet_slot_size = 2
 	section_slots = { "bow" = { locator = "part1" } "stern" = { locator = "part2" } }
@@ -298,6 +298,7 @@ military_station_small = {
 		ship_evasion_mult = -1
 		ship_armor_add = 15
 		ship_weapon_range_mult = 0.20
+		ship_weapon_damage = 1
 		ship_fire_rate_mult = 1
 		ship_shield_hp_mult = 1
 	}
@@ -330,10 +331,11 @@ military_station_medium = {
 		ship_evasion_mult = -1
 		ship_armor_add = 30
 		ship_weapon_range_mult = 0.20
+		ship_weapon_damage = 1
 		ship_fire_rate_mult = 1
 		ship_shield_hp_mult = 1
 	}
-	max_hitpoints = 10000
+	max_hitpoints = 15000
 	size_multiplier = 8
 	fleet_slot_size = 4
 	section_slots = {
@@ -363,10 +365,11 @@ military_station_large = {
 		ship_evasion_mult = -1
 		ship_armor_add = 44
 		ship_weapon_range_mult = 0.20
+		ship_weapon_damage = 1
 		ship_fire_rate_mult = 1
 		ship_shield_hp_mult = 1
 	}
-	max_hitpoints = 15000
+	max_hitpoints = 40000
 	size_multiplier = 16
 	fleet_slot_size = 8
 	section_slots = {
@@ -416,7 +419,7 @@ orbital_station = {
 	num_target_locators = 0
 	is_space_station = yes
 	build_block_radius = @build_block_radius_civilian
-	cost = 360
+	cost = 300
 
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
 	prerequisites = { "tech_spaceport_1" }
