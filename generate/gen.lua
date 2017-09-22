@@ -126,12 +126,47 @@ local unsortedData = {
 		name = "WIMP-Extractor Station",
 	},
 	{ -- NSC
+		power = 40,
+		cost = 1.143,
+		tech = "tech_graviton_power",
+		icons = "GFX_ship_part_reactor_6_NSC",
+		name = "Graviton Station",
+	},
+	{ -- NSC
 		power = 50,
 		cost = 1.111,
-		tech = "tech_adv_zero_point_power_fake",
-		icons = "GFX_ship_part_reactor_adv_zero_point_power",
-		name = "Adv. Zero Point Station",
+		tech = "tech_dark_matter_power",
+		icons = "GFX_ship_part_reactor_7_NSC",
+		name = "Dark Matter Station",
 	},
+	{ -- NSC
+		power = 60,
+		cost = 1.091,
+		tech = "tech_adv_zero_point_power",
+		icons = "GFX_ship_part_reactor_8_NSC",
+		name = "Singularity Station",
+	},
+	{ -- NSC
+		power = 70,
+		cost = 1.077,
+		tech = "tech_multidimensional_power",
+		icons = "GFX_ship_part_reactor_9_NSC",
+		name = "Multidimensional Station",
+	},
+	{ -- NSC
+		power = 80,
+		cost = 1.066,
+		tech = "tech_nsc_zero_point_power",
+		icons = "GFX_ship_part_reactor_10_NSC",
+		name = "Zero Point Station",
+	},
+	{ -- NSC
+		power = 100,
+		cost = 1.053,
+		tech = "tech_optimized_enigmatic_power",
+		icons = "GFX_ship_part_reactor_11_enigmatic_NSC",
+		name = "Optimized Enigmatic Station"
+	}
 }
 table.sort(unsortedData, function(a, b)
 	if a.power == b.power then return a.cost < b.cost end
@@ -152,75 +187,80 @@ end
 local reactorSets = {
 	{
 		utility = 7,
-		size = " corvette corvetteNSC ",
+		size = "corvette neo_MS_scout neo_MS_1 neo_MS_2 neo_MS_3 neo_MS_4 neo_MS_5 zeon_MS_scout zeon_MS_1 zeon_MS_2 zeon_MS_3 zeon_MS_4 zeon_MS_5 zeon_MS_P axis_MS_scout axis_MS_1 axis_MS_2 axis_MS_3 axis_MS_4 axis_MS_5 ball gm",
 		file = "util_powah_2_corvette.txt",
 	},
 	{
 		utility = 10,
-		size = " destroyer destroyerNSC Frigate cofh_se_corvette_hvy ",
+		size = "destroyer Frigate cofh_se_corvette_hvy",
 		file = "util_powah_3_destroyer.txt",
 	},
 	{
 		utility = 14,
-		size = " cofh_se_auxiliary_tender overload_mobile_station_small cofh_se_destroyer_hvy cofh_se_corvette_sup cofh_se_destroyer_sup military_station_small military_station_small_NSC Drydock st_light_cruiser_01 st_light_Int_01 st_R_light_Int_01 st_Rebel_01_Escort st_Empire_01_Escort st_R_light_cruiser ",
+		size = "cofh_se_auxiliary_tender overload_mobile_station_small cofh_se_destroyer_hvy cofh_se_corvette_sup cofh_se_destroyer_sup military_station_small Drydock st_light_cruiser_01 st_light_Int_01 st_R_light_Int_01 st_Rebel_01_Escort st_Empire_01_Escort st_R_light_cruiser",
 		file = "util_powah_6_station.txt",
 	},
 	{
 		utility = 24,
-		size = " cruiser cruiserNSC rs_support_cruiser rs_ea_cruiser st_R_Carrier_01 st_R_Cruiser_02 st_R_Cruiser_01 LightCarrier st_Carrier_01 st_Cruiser_01 st_Cruiser_02 ",
+		size = "cruiser rs_support_cruiser rs_ea_cruiser st_R_Carrier_01 st_R_Cruiser_02 st_R_Cruiser_01 LightCarrier st_Carrier_01 st_Cruiser_01 st_Cruiser_02",
 		file = "util_powah_4_cruiser.txt",
 	},
 	{
 		utility = 28,
-		size = " military_station_medium st_E_Battlecruiser Battlecruiser st_R_N_Battlecruiser ",
+		size = "military_station_medium st_E_Battlecruiser Battlecruiser st_R_N_Battlecruiser",
 		file = "util_powah_6_station.txt",
 	},
 	{
 		utility = 36,
-		size = " military_station_medium_NSC overload_mobile_station_medium cofh_se_cruiser_sup cofh_se_cruiser_hvy st_heavy_Sup_01 StrikeCruiser galleon rs_battlecruiser st_heavy_Int_01 st_battleship_01 st_R_battleship_01 ",
+		size = "overload_mobile_station_medium cofh_se_cruiser_sup cofh_se_cruiser_hvy st_heavy_Sup_01 StrikeCruiser galleon rs_battlecruiser st_heavy_Int_01 st_battleship_01 st_R_battleship_01",
 		file = "util_powah_7_realships.txt",
 	},
 	{
 		utility = 40,
-		size = " battleship battleshipNSC Carrier st_battleship_02 st_R_battleship_02 ",
+		size = "battleship Carrier st_battleship_02 st_R_battleship_02 white_base",
 		file = "util_powah_5_battleship.txt",
 	},
 	{
 		utility = 56,
-		size = " military_station_large military_station_large_NSC overload_mobile_station_large zhow_carrier SCX_Carrier ",
+		size = "military_station_large overload_mobile_station_large zhow_carrier SCX_Carrier",
 		file = "util_powah_6_station.txt",
 	},
 	{
 		utility = 60,
-		size = " leviathan cofh_se_battleship_hvy cofh_se_battleship_sup st_dreadnought_01 st_R_dreadnought ",
+		size = "leviathan cofh_se_battleship_hvy cofh_se_battleship_sup st_dreadnought_01 st_R_dreadnought",
 		file = "util_powah_9_isbs.txt",
 	},
 	{
 		utility = 64,
-		size = " rs_dreadnought SCX_Dreadnought ",
+		size = "rs_dreadnought SCX_Dreadnought",
 		file = "util_powah_7_realships.txt",
 	},
 	{
 		utility = 72,
-		size = " titan Dreadnought ",
+		size = "titan Dreadnought",
 		file = "util_powah_9_isbs.txt",
 	},
 	{
 		utility = 76,
-		size = " rs_heavy_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g ",
+		size = "rs_heavy_dreadnought rs_heavy_dreadnought_type_a rs_heavy_dreadnought_type_b rs_heavy_dreadnought_type_c rs_heavy_dreadnought_type_d rs_heavy_dreadnought_type_e rs_heavy_dreadnought_type_f rs_heavy_dreadnought_type_g",
 		file = "util_powah_7_realships.txt",
 	},
 	{
 		utility = 84,
-		size = " Superdreadnought SCX_Superdreadnought Headquarters military_station_xlarge st_SSD st_R_SSD sr_R_SSD ",
+		size = "Superdreadnought SCX_Superdreadnought Headquarters military_station_xlarge st_SSD st_R_SSD sr_R_SSD st_resurgent_01",
 		file = "util_powah_8_nsc.txt",
 	},
 	{
 		utility = 120,
-		size = " Flagship ",
+		size = "Flagship",
 		file = "util_powah_8_nsc.txt",
 	},
 }
+for _, entry in next, reactorSets do
+	local tokens = {}
+	for tk in entry.size:gmatch("%S+") do tokens[tk] = true end
+	entry.tokens = tokens
+end
 
 do
 	local actualShipComponents = {
@@ -239,15 +279,8 @@ do
 		zhow_carrier                 = { 0, 0, 12 },
 
 		-- NSC
-		corvetteNSC                  = { 4, 2, 0 },
-		destroyerNSC                 = { 4, 4, 0 },
 		Frigate                      = { 4, 3, 0 },
-		cruiserNSC                   = { 4, 4, 3 },
-		battleshipNSC                = { 4, 4, 8 },
 		Battlecruiser                = { 0, 5, 5 },
-		military_station_small_NSC   = { 2, 2, 2 },
-		military_station_medium_NSC  = { 4, 8, 4 },
-		military_station_large_NSC   = { 8, 8, 8 },
 		LightCarrier                 = { 4, 4, 2 },
 		StrikeCruiser                = { 6, 4, 5 },
 		Carrier                      = { 6, 5, 6 },
@@ -313,6 +346,33 @@ do
 		overload_mobile_station_medium     = { 4, 8, 4 },
 		overload_mobile_station_large      = { 8, 8, 8 },
 
+		-- Necro991, I don't know which mod it is
+		neo_MS_scout                  = { 3, 2, 0 },
+		neo_MS_1                      = { 3, 2, 0 },
+		neo_MS_2                      = { 3, 2, 0 },
+		neo_MS_3                      = { 3, 2, 0 },
+		neo_MS_4                      = { 3, 2, 0 },
+		neo_MS_5                      = { 3, 2, 0 },
+		zeon_MS_scout                 = { 3, 2, 0 },
+		zeon_MS_1                     = { 3, 2, 0 },
+		zeon_MS_2                     = { 3, 2, 0 },
+		zeon_MS_3                     = { 3, 2, 0 },
+		zeon_MS_4                     = { 3, 2, 0 },
+		zeon_MS_5                     = { 3, 2, 0 },
+		zeon_MS_P                     = { 3, 2, 0 },
+		axis_MS_scout                 = { 3, 2, 0 },
+		axis_MS_1                     = { 3, 2, 0 },
+		axis_MS_2                     = { 3, 2, 0 },
+		axis_MS_3                     = { 3, 2, 0 },
+		axis_MS_4                     = { 3, 2, 0 },
+		axis_MS_5                     = { 3, 2, 0 },
+		ball                          = { 3, 2, 0 },
+		gm                            = { 3, 2, 0 },
+		white_base                    = { 0, 0, 10 },
+
+		-- http://steamcommunity.com/sharedfiles/filedetails/?id=932208450
+		st_resurgent_01              = { 0, 16, 17 },
+
 		SCX_Carrier                  = { 0, 8, 8 },
 		SCX_Dreadnought              = { 0, 0, 16 },
 		SCX_Superdreadnought         = { 0, 0, 20 },
@@ -334,7 +394,7 @@ do
 	for ship, slots in pairs(numSmall) do
 		local assignedSlots
 		for _, entry in next, reactorSets do
-			if entry.size:find("%s" .. ship .. "%s") then
+			if entry.tokens[ship] then
 				assignedSlots = entry.utility
 				break
 			end
@@ -369,18 +429,14 @@ end
 do
 	local verifySizes = {}
 	local verifySlots = {}
-
 	for _, entry in next, reactorSets do
 		-- Verify that sizes set in this set dont exist in any previous ones
-		if type(entry.size) == "string" then
-			for s in entry.size:gmatch("%S+") do
-				if verifySizes[s] then
-					print(s .. " SIZE from the " .. tostring(entry.utility) .. " set already exists, please review settings. Exiting.")
-					os.exit()
-				else
-					verifySizes[s] = true
-				end
+		for s in pairs(entry.tokens) do
+			if verifySizes[s] then
+				print(s .. " SIZE from the " .. tostring(entry.utility) .. " set already exists, please review settings. Exiting.")
+				os.exit()
 			end
+			verifySizes[s] = true
 		end
 
 		-- Verify that it's a unique utility-slot size

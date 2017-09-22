@@ -10,26 +10,6 @@
 
 namespace = powah
 
-# NSC
-country_event = {
-	id = powah.201
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		has_country_flag = has_nsc_v3
-		NOT = { has_technology = "tech_adv_zero_point_power_fake" }
-		has_technology = "tech_adv_zero_point_power"
-	}
-
-	immediate = {
-		give_technology = {
-			tech = "tech_adv_zero_point_power_fake"
-			message = no
-		}
-	}
-}
-
 # nhsc fake techs
 country_event = {
 	id = powah.100
