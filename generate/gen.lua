@@ -42,7 +42,7 @@ local _sets = { 7, 10, 14, 24, 28, 36, 40, 56, 60, 64, 72, 76, 84, 120 }
 local _PATH_COMPONENTS = "../common/component_templates/"
 local _PATH_L10N = "../localisation/"
 local _FILE_COMPONENTS = "util_powah_%d.txt"
-local _FILE_L10N = "powah_stations_%s.yml"
+local _FILE_L10N = "powah_stations_l_%s.yml"
 
 local _ships = {}
 do
