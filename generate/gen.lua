@@ -1,5 +1,42 @@
 #!/usr/bin/lua
 
+-- ```NSC
+-- Power/ Cost  = Cost per power
+-- 35   / 11.7  = 2.9914   - Gravitron
+-- 40   / 12.5  = 3.2000   - Dark Matter
+-- 45   / 13.2  = 3.4090   - etc
+-- 50   / 13.9  = 3.5971
+-- 55   / 14.5  = 3.7931
+-- 60   / 15    = 4.0000
+-- ```
+
+-- ```Vanilla
+-- Power/ Cost  = Cost per power
+-- 10   / 5     = 2       - Fission
+-- 15   / 10    = 1.5     - Fusion
+-- 20   / 15    = 1.3333  - Cold Fusion
+-- 25   / 20    = 1.25    - Antimatter
+-- 30   / 25    = 1.2     - Zero Point
+-- ```
+
+-- ```TFW
+-- Power/ Cost  = Power per mineral
+-- 35   / 30    = 1.1666  -- s6      Energon
+-- 40   / 35    = 1.1428  -- s7      Antimatter Fusion
+-- 45   / 40    = 1.125   -- s8      Dark Matter
+-- 50   / 45    = 1.111   -- s9      Opt. Dark Matter
+-- 60   / 55    = 1.0909  -- s10     Singularity
+-- 70   / 65    = 1.0769  -- s11     Trisingularity
+-- 70   / 50    = 1.4     -- s11bio  Bio Reactor I
+-- 75   / 75    = 1       -- s11psi  Psi Cell
+-- 80   / 90    = 0.8888  -- s11synt Tachyon
+-- 80   / 70    = 1.1428  -- s12bio  Bio Reactor II
+-- 90   / 120   = 0.75    -- s12synt WIMP Extractor
+-- ```
+
+-- 10.3 / 12.1 = X
+
+
 local outputPath = "../common/component_templates/"
 local emptyfile = "util_powah_1.txt"
 
@@ -76,93 +113,121 @@ local unsortedData = {
 		icons = "GFX_ship_part_reactor_nhsc_8",
 		name = "Imp. Singularity Station",
 	},
-	{ -- TFW
+	{ -- TFW s6
 		power = 35,
-		cost = 1.133,
+		cost = 1.1666, -- 30
 		tech = "tech_fusion_power_energon",
 		icons = "GFX_ship_part_reactor_r6",
 		name = "Energon Station",
 	},
-	{ -- TFW
+	{ -- TFW s7
 		power = 40,
-		cost = 1.133,
+		cost = 1.1428, -- 35
 		tech = "tech_antimatter_power_optimized",
 		icons = "GFX_ship_part_reactor_r7",
 		name = "Antimatter Fusion Station",
 	},
-	{ -- TFW
+	{ -- TFW s8
 		power = 45,
-		cost = 1.125,
+		cost = 1.125, -- 40
 		tech = "tech_darkmatter_power",
 		icons = "GFX_ship_part_reactor_r8",
 		name = "Dark Matter Station",
 	},
-	{ -- TFW
+	{ -- TFW s9
 		power = 50,
-		cost = 1.111,
+		cost = 1.111, -- 45
 		tech = "tech_darkmatter_power_optimized",
 		icons = "GFX_ship_part_reactor_r9",
 		name = "Optimized Dark Matter Station",
 	},
-	{ -- TFW
+	{ -- TFW S10
 		power = 60,
-		cost = 1.09,
+		cost = 1.0909, -- 55
 		tech = "tech_singularity_power",
 		icons = "GFX_ship_part_reactor_r10",
 		name = "Singularity Station",
 	},
-	{ -- TFW
+	{ -- TFW s11
+		power = 70,
+		cost = 1.0769, -- 65
+		tech = "tech_singularity_power_opt",
+		icons = "GFX_ship_part_reactor_r10st",
+		name = "Trisingularity Station",
+	},
+	{ -- TFW S11bio
+		power = 70,
+		cost = 1.400, -- 50
+		tech = "tech_bio_power_1",
+		icons = "GFX_ship_part_bioreactor_1",
+		name = "Bio Station I",
+	},
+	{ -- TFW s11psi
 		power = 75,
-		cost = 1.071,
+		cost = 1, -- 75
+		tech = "tech_psi_power_1",
+		icons = "GFX_ship_part_reactor_psi1",
+		name = "Psi Network Station",
+	},
+	{ -- TFW s11synt
+		power = 80,
+		cost = 0.8888, -- 90
 		tech = "tech_tachyon_power",
 		icons = "GFX_ship_part_reactor_r11",
 		name = "Tachyon Station",
 	},
-	{ -- TFW
-		power = 85,
-		cost = 1.062,
+	{ -- TFW s12bio
+		power = 80,
+		cost = 1.1428, -- 70
+		tech = "tech_bio_power_2",
+		icons = "GFX_ship_part_bioreactor_2",
+		name = "Bio Station II",
+	},
+	{ -- TFW s12synt
+		power = 90,
+		cost = 0.7500, -- 120
 		tech = "tech_wimp_power",
 		icons = "GFX_ship_part_reactor_r12",
 		name = "WIMP-Extractor Station",
 	},
 	{ -- NSC
-		power = 40,
-		cost = 1.143,
+		power = 35,
+		cost = 2.9914,
 		tech = "tech_graviton_power_fake",
 		icons = "GFX_ship_part_reactor_6_NSC",
 		name = "Graviton Station",
 	},
 	{ -- NSC
-		power = 50,
-		cost = 1.111,
+		power = 40,
+		cost = 3.2,
 		tech = "tech_dark_matter_power_fake",
 		icons = "GFX_ship_part_reactor_7_NSC",
 		name = "Dark Matter Station",
 	},
 	{ -- NSC
-		power = 60,
-		cost = 1.091,
+		power = 45,
+		cost = 3.4090,
 		tech = "tech_adv_zero_point_power_fake",
 		icons = "GFX_ship_part_reactor_8_NSC",
 		name = "Singularity Station",
 	},
 	{ -- NSC
-		power = 70,
-		cost = 1.077,
+		power = 50,
+		cost = 3.5971,
 		tech = "tech_multidimensional_power_fake",
 		icons = "GFX_ship_part_reactor_9_NSC",
 		name = "Multidimensional Station",
 	},
 	{ -- NSC
-		power = 80,
-		cost = 1.066,
+		power = 55,
+		cost = 3.7931,
 		tech = "tech_nsc_zero_point_power_fake",
 		icons = "GFX_ship_part_reactor_10_NSC",
 		name = "Zero Point Station",
 	},
 	{ -- NSC
-		power = 100,
-		cost = 1.053,
+		power = 60,
+		cost = 4,
 		tech = "tech_optimized_enigmatic_power_fake",
 		icons = "GFX_ship_part_reactor_11_enigmatic_NSC",
 		name = "Optimized Enigmatic Station"

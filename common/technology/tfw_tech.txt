@@ -22,19 +22,19 @@ tech_antimatter_power_optimized = {
 	ai_weight = { factor = 0 }
 }
 
-tech_darkmatter_power= {
+tech_darkmatter_power = {
 	area = physics
 	cost = 0
 	tier = 0
 	category = { particles }
-	prerequisites = { "tech_antimatter_power_optimized" }
+	prerequisites = { "tech_antimatter_power_optimized" "tech_mine_dark_matter" }
 	weight = 0
 	is_reverse_engineerable = no
 	weight_modifier = { factor = 0 }
 	ai_weight = { factor = 0 }
 }
 
-tech_darkmatter_power_optimized= {
+tech_darkmatter_power_optimized = {
 	area = physics
 	cost = 0
 	tier = 0
@@ -64,7 +64,7 @@ tech_tachyon_power = {
 	tier = 0
 	is_rare = yes
 	category = { particles }
-	prerequisites = { "tech_singularity_power" }
+	prerequisites = { "tech_singularity_power" "tech_tfw_adv_weapons" }
 	weight = 0
 	is_reverse_engineerable = no
 	weight_modifier = { factor = 0 }
@@ -78,6 +78,98 @@ tech_wimp_power = {
 	category = { particles }
 	is_rare = yes
 	prerequisites = { "tech_tachyon_power" }
+	weight = 0
+	is_reverse_engineerable = no
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_singularity_power_opt = {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { particles }
+	is_rare = yes
+	prerequisites = { "tech_singularity_power" }
+	weight = 0
+	is_reverse_engineerable = no
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_bio_power_1 = {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { biology }
+	is_rare = yes
+	prerequisites = { "tech_darkmatter_power_optimized" "tech_tfw_rapid_cell_replication" }
+	weight = 0
+	is_reverse_engineerable = no
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_psi_power_1 = {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { psionics }
+	is_rare = yes
+	prerequisites = { "tech_singularity_power" "tech_tfw_focused_psi_flows" }
+	weight = 0
+	is_reverse_engineerable = no
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_bio_power_2 = {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { biology }
+	is_rare = yes
+	prerequisites = { "tech_bio_power_1" }
+	weight = 0
+	is_reverse_engineerable = no
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+
+tech_tfw_adv_weapons = {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { materials }
+	is_rare = yes
+	prerequisites = { "tech_spaceport_6" "tech_darkmatter_power" }
+	weight = 0
+	is_reverse_engineerable = no
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_tfw_rapid_cell_replication = {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { biology }
+	is_rare = yes
+	prerequisites = { "tech_gene_tailoring" }
+	weight = 0
+	is_reverse_engineerable = no
+	weight_modifier = { factor = 0 }
+	ai_weight = { factor = 0 }
+}
+
+tech_tfw_focused_psi_flows = {
+	area = physics
+	cost = 0
+	tier = 0
+	category = { psionics }
+	is_rare = yes
+	prerequisites = { "tech_telepathy" }
 	weight = 0
 	is_reverse_engineerable = no
 	weight_modifier = { factor = 0 }
