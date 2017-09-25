@@ -13,10 +13,10 @@ common/component_templates/util_powah_72.txt
 common/component_templates/util_powah_76.txt
 common/component_templates/util_powah_84.txt
 common/component_templates/util_powah_120.txt
-localisation/powah_stations_english.yml
-localisation/powah_stations_braz_por.yml
-localisation/powah_stations_french.yml
-localisation/powah_stations_german.yml
-localisation/powah_stations_polish.yml
-localisation/powah_stations_russian.yml
-localisation/powah_stations_spanish.yml
+localisation/powah_stations_l_english.yml
+localisation/powah_stations_l_braz_por.yml
+localisation/powah_stations_l_french.yml
+localisation/powah_stations_l_german.yml
+localisation/powah_stations_l_polish.yml
+localisation/powah_stations_l_russian.yml
+localisation/powah_stations_l_spanish.yml
