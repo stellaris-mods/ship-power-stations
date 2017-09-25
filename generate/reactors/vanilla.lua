@@ -7,13 +7,36 @@
 -- 30   / 25    = 1.2     - Zero Point
 -- ```
 
+-- DOCUMENTATION
+-- power
+-- Power output of a SMALL version of the reactor utility component.
+--
+-- cost
+-- Mineral cost of a SMALL version of the reactor utility component.
+--
+-- tech
+-- technology used to unlock the reactor components.
+-- This only supports one tech for now.
+--
+-- icons
+-- Same GFX reference you use in the utility component.
+--
+-- name
+-- Either just a string that will be used for all languages,
+-- or a table where the key is the language, and the value
+-- is the name for that language.
+--
+
 return {
 	{
 		power = 10,
 		cost = 5,
 		tech = "tech_powah_1",
 		icons = "GFX_ship_part_reactor_1",
-		name = "Fission Station",
+		name = {
+			english = "Fission Station",
+			--braz_por = "Reator de Fissão",
+		}
 	},
 	{
 		power = 15,

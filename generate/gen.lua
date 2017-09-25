@@ -204,10 +204,14 @@ do
 	for _, lang in next, languages do
 		local f = io.open(_PATH_L10N .. _FILE_L10N:format(lang), "w+")
 		f:write(bom)
-		f:write("l_" .. lang .. ":\n")
+		f:write("\nl_" .. lang .. ":\n\n")
 		for _, set in next, _sets do
 			for index, data in next, _reactorData do
-				f:write( ("POWAH_REACTOR_%d_%d: %q\n"):format(set, index, data.name) )
+				if type(data.name) == "table" then
+					f:write( ("POWAH_REACTOR_%d_%d: %q\n"):format(set, index, data.name[lang] or data.name.english) )
+				else
+					f:write( ("POWAH_REACTOR_%d_%d: %q\n"):format(set, index, data.name) )
+				end
 			end
 			f:write("\n")
 		end
