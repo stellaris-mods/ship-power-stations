@@ -192,42 +192,42 @@ local unsortedData = {
 	},
 	{ -- NSC
 		power = 35,
-		cost = 2.9914,
+		cost = 2.9914, -- 11.7
 		tech = "tech_graviton_power_fake",
 		icons = "GFX_ship_part_reactor_6_NSC",
 		name = "Graviton Station",
 	},
 	{ -- NSC
 		power = 40,
-		cost = 3.2,
+		cost = 3.2, -- 12.5
 		tech = "tech_dark_matter_power_fake",
 		icons = "GFX_ship_part_reactor_7_NSC",
 		name = "Dark Matter Station",
 	},
 	{ -- NSC
 		power = 45,
-		cost = 3.4090,
+		cost = 3.4090, -- 13.2
 		tech = "tech_adv_zero_point_power_fake",
 		icons = "GFX_ship_part_reactor_8_NSC",
 		name = "Singularity Station",
 	},
 	{ -- NSC
 		power = 50,
-		cost = 3.5971,
+		cost = 3.5971, -- 13.9
 		tech = "tech_multidimensional_power_fake",
 		icons = "GFX_ship_part_reactor_9_NSC",
 		name = "Multidimensional Station",
 	},
 	{ -- NSC
 		power = 55,
-		cost = 3.7931,
+		cost = 3.7931, -- 14.5
 		tech = "tech_nsc_zero_point_power_fake",
 		icons = "GFX_ship_part_reactor_10_NSC",
 		name = "Zero Point Station",
 	},
 	{ -- NSC
 		power = 60,
-		cost = 4,
+		cost = 4, -- 15
 		tech = "tech_optimized_enigmatic_power_fake",
 		icons = "GFX_ship_part_reactor_11_enigmatic_NSC",
 		name = "Optimized Enigmatic Station"
@@ -257,7 +257,7 @@ local reactorSets = {
 	},
 	{
 		utility = 10,
-		size = "destroyer Frigate cofh_se_corvette_hvy",
+		size = "destroyer cofh_se_corvette_hvy",
 		file = "util_powah_3_destroyer.txt",
 	},
 	{
@@ -344,7 +344,6 @@ do
 		zhow_carrier                 = { 0, 0, 12 },
 
 		-- NSC
-		Frigate                      = { 4, 3, 0 },
 		Battlecruiser                = { 0, 5, 5 },
 		LightCarrier                 = { 4, 4, 2 },
 		StrikeCruiser                = { 6, 4, 5 },
