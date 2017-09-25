@@ -1,17 +1,21 @@
 #!/usr/bin/lua
 
+-- ADDING NEW POWER STATION TECHS
 -- If you are here to add support for your reactor mod, please
 -- make a new file that contains your reactor data and add it below.
-local suppliers = {
+-- The order does not matter, you can insert it anywhere.
+local _REACTORS = {
 	"reactors.vanilla",
 	"reactors.nsc",
 	"reactors.nh-shipcomponents",
-	"reactors.tfw-bosp"
+	"reactors.tfw-bosp",
 }
 
+-- ADDING SUPPORT FOR NEW SHIP TYPES
 -- If you want to add support for more ships, please
 -- make a new file that contains your ship data and add it below.
-local ships = {
+-- The order does not matter, you can insert it anywhere.
+local _SHIPS = {
 	"ships.vanilla",
 	"ships.isbs",
 	"ships.necro991",
@@ -26,16 +30,20 @@ local ships = {
 	"ships.zhow",
 }
 
-local _PATH_COMPONENTS = "../common/component_templates/"
-local _PATH_L10N = "../localisation/"
-local emptyfile = "util_powah_1.txt"
+-- If you came here to add support for your ships or reactors,
+-- you can ignore the rest of the script below safely.
+-------------------------------------------------------------------------------
 
 local _sets = { 7, 10, 14, 24, 28, 36, 40, 56, 60, 64, 72, 76, 84, 120 }
-local _SET_FILENAME = "util_powah_%d.txt"
+
+local _PATH_COMPONENTS = "../common/component_templates/"
+local _PATH_L10N = "../localisation/"
+local _FILE_COMPONENTS = "util_powah_%d.txt"
+local _FILE_L10N = "powah_stations_%s.yml"
 
 local _ships = {}
 do
-	for _, id in next, ships do
+	for _, id in next, _SHIPS do
 		local add = require(id)
 		for k, slots in pairs(add) do
 			local s = slots[1] + (slots[2] * 2) + (slots[3] * 4)
@@ -65,8 +73,6 @@ do
 	table.sort(sets)
 	print("Current sets: " .. table.concat(_sets, " "))
 	print("Ideal sets:   " .. table.concat(sets, " "))
-	--print(#sortedIdeals)
-	--print(table.concat(max, ", "))
 end
 
 local _shipsPerSet = {}
@@ -97,21 +103,6 @@ do
 end
 for _, shipIds in next, _shipsPerSet do table.sort(shipIds) end
 
-local entryTmpl = [[
-utility_component_template = {
-	key = "POWAH_REACTOR_[key]_[index]"
-	size = small
-	icon = "[icon]"
-	icon_frame = 1
-	cost = [cost]
-	power = [power]
-	ai_weight = { weight = [index] }
-	size_restriction = { [size] }
-	prerequisites = { "[tech]" }
-	component_set = "powerstation_components"
-}
-]]
-
 do
 	local emptyTmpl = [[
 utility_component_template = {
@@ -125,19 +116,33 @@ utility_component_template = {
 	component_set = "powerstation_components"
 }
 ]]
-	local f = io.open(_PATH_COMPONENTS .. emptyfile, "w+")
+	local f = io.open(_PATH_COMPONENTS .. "util_powah_1.txt", "w+")
 	f:write(emptyTmpl)
 	f:close()
 end
 
 -- Delete all files
 for _, set in next, _sets do
-	os.remove(_PATH_COMPONENTS .. _SET_FILENAME:format(set))
+	os.remove(_PATH_COMPONENTS .. _FILE_COMPONENTS:format(set))
 end
 
 local _reactorData = {}
 do
-	for _, supplier in next, suppliers do
+	local entryTmpl = [[
+utility_component_template = {
+	key = "POWAH_REACTOR_[key]_[index]"
+	size = small
+	icon = "[icon]"
+	icon_frame = 1
+	cost = [cost]
+	power = [power]
+	ai_weight = { weight = [index] }
+	size_restriction = { [size] }
+	prerequisites = { "[tech]" }
+	component_set = "powerstation_components"
+}
+]]
+	for _, supplier in next, _REACTORS do
 		local add = require(supplier)
 		for _, data in next, add do
 			data.cost = data.power / data.cost
@@ -163,7 +168,7 @@ do
 	end
 
 	for _, set in next, _sets do
-		local f = io.open(_PATH_COMPONENTS .. _SET_FILENAME:format(set), "a+")
+		local f = io.open(_PATH_COMPONENTS .. _FILE_COMPONENTS:format(set), "a+")
 		for index, data in next, _reactorData do
 			local comp = entryTmpl
 			local power = calculatePower(set, data.power)
@@ -195,10 +200,9 @@ do
 		"spanish",
 	}
 	local bom = string.char(0xEF) .. string.char(0xBB) .. string.char(0xBF)
-	local fileFmt = "powah_stations_%s.yml"
 
 	for _, lang in next, languages do
-		local f = io.open(_PATH_L10N .. fileFmt:format(lang), "w+")
+		local f = io.open(_PATH_L10N .. _FILE_L10N:format(lang), "w+")
 		f:write(bom)
 		f:write("l_" .. lang .. ":\n")
 		for _, set in next, _sets do
