@@ -34,6 +34,9 @@ local _SHIPS = {
 -- you can ignore the rest of the script below safely.
 -------------------------------------------------------------------------------
 
+-- XXX It's generally a bad idea to adjust this except at the same time as
+-- XXX a major Stellaris patch, because it's used for the component keys + language keys.
+-- XXX So if you change those, savegame ships will be mangled.
 local _sets = { 7, 10, 14, 24, 28, 36, 40, 56, 60, 64, 72, 76, 84, 120 }
 
 local _PATH_COMPONENTS = "../common/component_templates/"
