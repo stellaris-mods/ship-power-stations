@@ -26,34 +26,9 @@ local ships = {
 	"ships.zhow",
 }
 
-local outputPath = "../common/component_templates/"
+local _PATH_COMPONENTS = "../common/component_templates/"
+local _PATH_L10N = "../localisation/"
 local emptyfile = "util_powah_1.txt"
-
--- XXX Note that the script doesnt touch
--- localisation files. Make sure they are updated.
-local unsortedData = {}
-for _, supplier in next, suppliers do
-	local add = require(supplier)
-	for _, data in next, add do
-		data.cost = data.power / data.cost
-		unsortedData[#unsortedData+1] = data
-	end
-end
-table.sort(unsortedData, function(a, b)
-	if a.power == b.power then return a.cost < b.cost end
-	return a.power < b.power
-end)
-local poweroutput = {}
-local cost = {}
-local tech = {}
-local icons = {}
-
-for _, data in next, unsortedData do
-	poweroutput[#poweroutput+1] = data.power
-	cost[#cost + 1] = data.cost
-	tech[#tech + 1] = data.tech
-	icons[#icons + 1] = data.icons
-end
 
 local _sets = { 7, 10, 14, 24, 28, 36, 40, 56, 60, 64, 72, 76, 84, 120 }
 local _SET_FILENAME = "util_powah_%d.txt"
@@ -137,19 +112,6 @@ utility_component_template = {
 }
 ]]
 
-local function calculatePower(slots, level)
-	local r = math.ceil((slots * poweroutput[level]) / 2)
-	local m = r % 5
-	if m == 0 then return r end
-	return r + 5 - m
-end
-local function calculateCost(power, level)
-	local r = math.floor(power / cost[level])
-	local m = r % 5
-	if m == 0 then return r end
-	return r - 5 - m
-end
-
 do
 	local emptyTmpl = [[
 utility_component_template = {
@@ -163,32 +125,57 @@ utility_component_template = {
 	component_set = "powerstation_components"
 }
 ]]
-	local f = io.open(outputPath .. emptyfile, "w+")
+	local f = io.open(_PATH_COMPONENTS .. emptyfile, "w+")
 	f:write(emptyTmpl)
 	f:close()
 end
 
 -- Delete all files
 for _, set in next, _sets do
-	os.remove(outputPath .. _SET_FILENAME:format(set))
+	os.remove(_PATH_COMPONENTS .. _SET_FILENAME:format(set))
 end
 
-for _, set in next, _sets do
-	do
-		local f = io.open(outputPath .. _SET_FILENAME:format(set), "a+")
-		for count in next, poweroutput do
+local _reactorData = {}
+do
+	for _, supplier in next, suppliers do
+		local add = require(supplier)
+		for _, data in next, add do
+			data.cost = data.power / data.cost
+			_reactorData[#_reactorData+1] = data
+		end
+	end
+	table.sort(_reactorData, function(a, b)
+		if a.power == b.power then return a.cost < b.cost end
+		return a.power < b.power
+	end)
+
+	local function calculatePower(slots, power)
+		local r = math.ceil((slots * power) / 2)
+		local m = r % 5
+		if m == 0 then return r end
+		return r + 5 - m
+	end
+	local function calculateCost(power, cost)
+		local r = math.floor(power / cost)
+		local m = r % 5
+		if m == 0 then return r end
+		return r - 5 - m
+	end
+
+	for _, set in next, _sets do
+		local f = io.open(_PATH_COMPONENTS .. _SET_FILENAME:format(set), "a+")
+		for index, data in next, _reactorData do
 			local comp = entryTmpl
-			local power = calculatePower(set, count)
-			local entryCost = calculateCost(power, count)
+			local power = calculatePower(set, data.power)
+			local entryCost = calculateCost(power, data.cost)
 
 			comp = comp:gsub("%[key%]", set)
-			comp = comp:gsub("%[index%]", count)
-			comp = comp:gsub("%[icon%]", icons[count])
-			comp = comp:gsub("%[tech%]", tech[count])
+			comp = comp:gsub("%[index%]", index)
+			comp = comp:gsub("%[icon%]", data.icons)
+			comp = comp:gsub("%[tech%]", data.tech)
 			comp = comp:gsub("%[cost%]", entryCost)
 			comp = comp:gsub("%[power%]", power)
 			comp = comp:gsub("%[size%]", table.concat(_shipsPerSet[set], " "))
-			--comp = comp:gsub("%[set%]", entry.set)
 
 			f:write(comp)
 			f:flush()
@@ -197,57 +184,29 @@ for _, set in next, _sets do
 	end
 end
 
-
 do
-	local defaults = {}
-	for _, data in next, unsortedData do
-		defaults[#defaults+1] = data.name
-	end
-	local language = { mt = { __index = function(_, k) return defaults[k] end } }
-	function language.new(t)
-		setmetatable(t, language.mt)
-		return t
-	end
-
-	local LANGUAGES = {
-		language.new({}), -- First must always be english
-		--language.new({
-			--"Extracto de tachyonoz plz"
-		--})
+	local languages = {
+		"english",
+		"braz_por",
+		"french",
+		"german",
+		"polish",
+		"russian",
+		"spanish",
 	}
+	local bom = string.char(0xEF) .. string.char(0xBB) .. string.char(0xBF)
+	local fileFmt = "powah_stations_%s.yml"
 
-	--do
-		-- XXX verify that a language has the right number of keys
-	--end
-
-	--local keyprefix -- "POWAH_REACTOR_[key]"
-	--local output = ""
-	local blockTmpl = ""
-	for i in next, poweroutput do
-		blockTmpl = blockTmpl .. "[key]_" .. i .. ": \"[" .. i .. "]\"\n"
-	end
-	blockTmpl = blockTmpl .. "\n"
-
-	--local languageRoot
-	-- XXX ye ye we should just edit the localization files directly.
-	local f = io.open("copyfromme.yml", "w+")
-	for _, trans in next, LANGUAGES do
-
-		-- This holds the block with [id] set to
-		-- the first set
-		local subBlock = blockTmpl
-
+	for _, lang in next, languages do
+		local f = io.open(_PATH_L10N .. fileFmt:format(lang), "w+")
+		f:write(bom)
+		f:write("l_" .. lang .. ":\n")
 		for _, set in next, _sets do
-			local prefix = "POWAH_REACTOR_" .. set
-			local root = subBlock
-			root = root:gsub("%[key%]", prefix)
-			for count in next, poweroutput do
-				root = root:gsub("%[" .. count  .. "%]", trans[count])
+			for index, data in next, _reactorData do
+				f:write( ("POWAH_REACTOR_%d_%d: %q\n"):format(set, index, data.name) )
 			end
-			f:write(root)
+			f:write("\n")
 		end
-		f:flush()
+		f:close()
 	end
-	f:close()
-
 end
