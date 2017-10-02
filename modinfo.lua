@@ -15,5 +15,6 @@ return {
 		-- include all files from .gitignore
 		gitignore = true,
 		files = {} -- can contain relative file paths
-	}
+	},
+	exclude = { "readme.md", "steam.bbcode", ".git", ".gitignore" }
 }
