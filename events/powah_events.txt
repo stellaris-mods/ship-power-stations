@@ -1,12 +1,12 @@
-# We check every power station tech every time
-# a country researches anything.
-# This way, it's "compatible" with existing save games,
-# such that the country gets the relevant tech
-# immediately after researching anything.
-# We could use last_increased_tech, but then, in
-# existing games that you load after installing the
-# addon, you would only get access to power stations
+# We check every power station tech every time a country researches anything.
+#
+# This way, it's "compatible" with existing save games, such that the
+# country gets the relevant tech immediately after researching anything.
+#
+# We could use last_increased_tech, but then, in  existing games that you
+# load after installing the addon, you would only get access to power stations
 # for new levels of tech reactors.
+#
 
 namespace = powah
 

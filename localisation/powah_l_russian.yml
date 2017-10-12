@@ -21,22 +21,6 @@ tech_powah_5_desc: "$tech_powah_1_desc$"
 tech_powah_6: "Enigmatic Station"
 tech_powah_6_desc: "$tech_powah_1_desc$"
 
-nhsc_tech_advzeropointreactor_1_fake: "NHSC Reactor Station 1"
-nhsc_tech_advzeropointreactor_1_fake_desc: "$tech_powah_1_desc$"
-nhsc_tech_advzeropointreactor_2_fake: "NHSC Reactor Station 2"
-nhsc_tech_advzeropointreactor_2_fake_desc: "$tech_powah_1_desc$"
-nhsc_tech_enigmatic_power_2_fake: "Enigmatic Station Level 2"
-nhsc_tech_enigmatic_power_2_fake_desc: "$tech_powah_1_desc$"
-nhsc_tech_advzeropointreactor_3_fake: "NHSC Reactor Station 3"
-nhsc_tech_advzeropointreactor_3_fake_desc: "$tech_powah_1_desc$"
-
-tech_unlock_powah_1: "§HUnlocks Component:§! $tech_powah_1$"
-tech_unlock_powah_2: "§HUnlocks Component:§! $tech_powah_2$"
-tech_unlock_powah_3: "§HUnlocks Component:§! $tech_powah_3$"
-tech_unlock_powah_4: "§HUnlocks Component:§! $tech_powah_4$"
-tech_unlock_powah_5: "§HUnlocks Component:§! $tech_powah_5$"
-tech_unlock_powah_6: "§HUnlocks Component:§! $tech_powah_6$"
-
 powerstation_components: "Power Station"
 powerstation_components_DESC: "Ship-mounted power station that produces power equal to roughly 50% of base hull capacity.\n\n"
 
