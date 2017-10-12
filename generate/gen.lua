@@ -1,5 +1,28 @@
 #!/usr/bin/lua
 
+local LICENSE = [[
+###
+# This file is part of a project hosted at https://github.com/stellaris-mods
+# Copyright (c) 2017 folk@folk.wtf
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software Foundation,
+# Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
+###
+
+
+]]
+
 -- ADDING NEW POWER STATION TECHS
 -- If you are here to add support for your reactor mod, please
 -- make a new file that contains your reactor data and add it below.
@@ -120,6 +143,7 @@ utility_component_template = {
 }
 ]]
 	local f = io.open(_PATH_COMPONENTS .. "util_powah_1.txt", "w+")
+	f:write(LICENSE)
 	f:write(emptyTmpl)
 	f:close()
 end
@@ -172,6 +196,7 @@ utility_component_template = {
 
 	for _, set in next, _sets do
 		local f = io.open(_PATH_COMPONENTS .. _FILE_COMPONENTS:format(set), "a+")
+		f:write(LICENSE)
 		for index, data in next, _reactorData do
 			local comp = entryTmpl
 			local power = calculatePower(set, data.power)
@@ -186,7 +211,6 @@ utility_component_template = {
 			comp = comp:gsub("%[size%]", table.concat(_shipsPerSet[set], " "))
 
 			f:write(comp)
-			f:flush()
 		end
 		f:close()
 	end
@@ -207,7 +231,8 @@ do
 	for _, lang in next, languages do
 		local f = io.open(_PATH_L10N .. _FILE_L10N:format(lang), "w+")
 		f:write(bom)
-		f:write("\nl_" .. lang .. ":\n\n")
+		f:write("\nl_" .. lang .. ":\n")
+		f:write(LICENSE)
 		for _, set in next, _sets do
 			for index, data in next, _reactorData do
 				if type(data.name) == "table" then
