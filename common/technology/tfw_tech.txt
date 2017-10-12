@@ -1,3 +1,16 @@
+
+# TFWs Bunch of Ship Parts Fake Techs
+
+# Since (1) we load _before_ the mod above if it's installed,
+# AND (2) we use a _different file name_ for the techs,
+# the mod aboves techs will _overwrite_ these fake ones.
+#
+# If the mod above is _not_ installed, this file
+# allows our components to depend on these technologies
+# and (a) produce no error log output, and (b) never
+# show up ingame.
+#
+
 tech_fusion_power_energon = {
 	area = physics
 	cost = 0

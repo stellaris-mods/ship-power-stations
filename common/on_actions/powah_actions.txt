@@ -9,15 +9,5 @@ on_tech_increased = {
 		powah.4
 		powah.5
 		powah.6
-		powah.100
-		powah.101
-		powah.102
-		powah.103
-		powah_nsc.1
-		powah_nsc.2
-		powah_nsc.3
-		powah_nsc.4
-		powah_nsc.5
-		powah_nsc.6
 	}
 }

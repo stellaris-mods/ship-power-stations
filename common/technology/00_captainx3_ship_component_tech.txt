@@ -1,0 +1,236 @@
+
+# NSC Fake Techs
+
+# Since (1) we load _after_ the mod above if it's
+# installed, AND (2) we use the _same filename_ for
+# the techs, their file will take precedence, and
+# this file will simply never load.
+#
+# If the mod above is _not_ installed, this file
+# allows our components to depend on these technologies
+# and (a) produce no error log output, and (b) never
+# show up ingame.
+#
+
+tech_advanced_warship_components_1 = {
+	area = physics
+	category = { computing }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_advanced_warship_components_2 = {
+	area = physics
+	category = { computing }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_graviton_power = {
+	area = physics
+	category = { particles }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_dark_matter_power = {
+	area = physics
+	category = { particles }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_adv_zero_point_power = {
+	area = physics
+	category = { particles }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_multidimensional_power = {
+	area = physics
+	category = { particles }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_nsc_zero_point_power = {
+	area = physics
+	category = { particles }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_optimized_enigmatic_power = {
+	area = physics
+	category = { particles }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_shields_6_NSC = {
+	area = physics
+	category = { field_manipulation }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_shields_7_NSC = {
+	area = physics
+	category = { field_manipulation }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_shields_8_NSC = {
+	area = physics
+	category = { field_manipulation }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_shields_9_NSC = {
+	area = physics
+	category = { field_manipulation }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_shields_10_NSC = {
+	area = physics
+	category = { field_manipulation }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_shields_11_psionic_NSC = {
+	area = physics
+	category = { field_manipulation }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_shields_12_enigmatic_NSC = {
+	area = physics
+	category = { field_manipulation }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+# Ablative Neutronium Armor
+tech_ship_armor_6_NSC = {
+	area = engineering
+	category = { materials }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+# Reactive Nanocomposite Armor
+tech_ship_armor_7_NSC = {
+	area = engineering
+	category = { materials }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+# Neutronium Nanocomposite Armor
+tech_ship_armor_8_NSC = {
+	area = engineering
+	category = { materials }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+# Anti-Neutronium Nanocomposite Armor
+tech_ship_armor_9_NSC = {
+	area = engineering
+	category = { materials }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+# Gravi-Forged Nanocomposite Armor
+tech_ship_armor_10_NSC = {
+	area = engineering
+	category = { materials }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+# Optimized Adaptive Dragon Armor
+tech_optimized_adaptive_dragon_armor = {
+	area = engineering
+	category = { materials }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_sensors_5_NSC = {
+	area = physics
+	category = { voidcraft }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+tech_sensors_6_NSC = {
+	area = physics
+	category = { voidcraft }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+#Graviton Thrusters
+tech_thrusters_5_NSC = {
+	area = engineering
+	category = { rocketry }
+	cost = 0
+	tier = 0
+	weight = 0
+	icon = "tech_spaceport_2"
+}

@@ -1,0 +1,49 @@
+
+# NHunters Extra Ship Components Fake Techs
+
+# Since (1) we load _after_ the mod above if it's
+# installed, AND (2) we use the _same filename_ for
+# the techs, their file will take precedence, and
+# this file will simply never load.
+#
+# If the mod above is _not_ installed, this file
+# allows our components to depend on these technologies
+# and (a) produce no error log output, and (b) never
+# show up ingame.
+#
+
+nhsc_tech_advzeropointreactor_1 = {
+	cost = 0
+	area = physics
+	tier = 0
+	category = { particles }
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+nhsc_tech_advzeropointreactor_2 = {
+	cost = 0
+	area = physics
+	tier = 0
+	category = { particles }
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+nhsc_tech_advzeropointreactor_3 = {
+	cost = 0
+	area = physics
+	tier = 0
+	category = { particles }
+	weight = 0
+	icon = "tech_spaceport_2"
+}
+
+nhsc_tech_enigmatic_power_2 = {
+	cost = 0
+	area = physics
+	tier = 0
+	category = { particles }
+	weight = 0
+	icon = "tech_spaceport_2"
+}

@@ -1,5 +1,7 @@
 return {
 	-- Vanilla
+	-- constructor                  = { 4, 0, 0 },
+	-- science                      = { 4, 0, 0 },
 	corvette                     = { 3, 2, 0 },
 	destroyer                    = { 4, 3, 0 },
 	cruiser                      = { 0, 6, 3 },
