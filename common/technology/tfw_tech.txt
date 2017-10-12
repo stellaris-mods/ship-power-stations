@@ -16,11 +16,8 @@ tech_fusion_power_energon = {
 	cost = 0
 	tier = 0
 	category = { particles }
-	prerequisites = { "tech_zero_point_power" }
 	weight = 0
-	is_reverse_engineerable = no
-	weight_modifier = { factor = 0 }
-	ai_weight = { factor = 0 }
+	icon = "tech_spaceport_2"
 }
 
 tech_antimatter_power_optimized = {
@@ -28,11 +25,8 @@ tech_antimatter_power_optimized = {
 	cost = 0
 	tier = 0
 	category = { particles }
-	prerequisites = { "tech_fusion_power_energon" }
 	weight = 0
-	is_reverse_engineerable = no
-	weight_modifier = { factor = 0 }
-	ai_weight = { factor = 0 }
+	icon = "tech_spaceport_2"
 }
 
 tech_darkmatter_power = {
@@ -40,11 +34,8 @@ tech_darkmatter_power = {
 	cost = 0
 	tier = 0
 	category = { particles }
-	prerequisites = { "tech_antimatter_power_optimized" "tech_mine_dark_matter" }
 	weight = 0
-	is_reverse_engineerable = no
-	weight_modifier = { factor = 0 }
-	ai_weight = { factor = 0 }
+	icon = "tech_spaceport_2"
 }
 
 tech_darkmatter_power_optimized = {
@@ -52,11 +43,8 @@ tech_darkmatter_power_optimized = {
 	cost = 0
 	tier = 0
 	category = { particles }
-	prerequisites = { "tech_darkmatter_power" }
 	weight = 0
-	is_reverse_engineerable = no
-	weight_modifier = { factor = 0 }
-	ai_weight = { factor = 0 }
+	icon = "tech_spaceport_2"
 }
 
 tech_singularity_power = {
@@ -64,24 +52,17 @@ tech_singularity_power = {
 	cost = 0
 	tier = 0
 	category = { particles }
-	prerequisites = { "tech_darkmatter_power_optimized" }
 	weight = 0
-	is_reverse_engineerable = no
-	weight_modifier = { factor = 0 }
-	ai_weight = { factor = 0 }
+	icon = "tech_spaceport_2"
 }
 
 tech_tachyon_power = {
 	area = physics
 	cost = 0
 	tier = 0
-	is_rare = yes
 	category = { particles }
-	prerequisites = { "tech_singularity_power" "tech_tfw_adv_weapons" }
 	weight = 0
-	is_reverse_engineerable = no
-	weight_modifier = { factor = 0 }
-	ai_weight = { factor = 0 }
+	icon = "tech_spaceport_2"
 }
 
 tech_wimp_power = {
@@ -89,12 +70,8 @@ tech_wimp_power = {
 	cost = 0
 	tier = 0
 	category = { particles }
-	is_rare = yes
-	prerequisites = { "tech_tachyon_power" }
 	weight = 0
-	is_reverse_engineerable = no
-	weight_modifier = { factor = 0 }
-	ai_weight = { factor = 0 }
+	icon = "tech_spaceport_2"
 }
 
 tech_singularity_power_opt = {
@@ -102,12 +79,8 @@ tech_singularity_power_opt = {
 	cost = 0
 	tier = 0
 	category = { particles }
-	is_rare = yes
-	prerequisites = { "tech_singularity_power" }
 	weight = 0
-	is_reverse_engineerable = no
-	weight_modifier = { factor = 0 }
-	ai_weight = { factor = 0 }
+	icon = "tech_spaceport_2"
 }
 
 tech_bio_power_1 = {
@@ -115,12 +88,8 @@ tech_bio_power_1 = {
 	cost = 0
 	tier = 0
 	category = { biology }
-	is_rare = yes
-	prerequisites = { "tech_darkmatter_power_optimized" "tech_tfw_rapid_cell_replication" }
 	weight = 0
-	is_reverse_engineerable = no
-	weight_modifier = { factor = 0 }
-	ai_weight = { factor = 0 }
+	icon = "tech_spaceport_2"
 }
 
 tech_psi_power_1 = {
@@ -128,12 +97,8 @@ tech_psi_power_1 = {
 	cost = 0
 	tier = 0
 	category = { psionics }
-	is_rare = yes
-	prerequisites = { "tech_singularity_power" "tech_tfw_focused_psi_flows" }
 	weight = 0
-	is_reverse_engineerable = no
-	weight_modifier = { factor = 0 }
-	ai_weight = { factor = 0 }
+	icon = "tech_spaceport_2"
 }
 
 tech_bio_power_2 = {
@@ -141,12 +106,8 @@ tech_bio_power_2 = {
 	cost = 0
 	tier = 0
 	category = { biology }
-	is_rare = yes
-	prerequisites = { "tech_bio_power_1" }
 	weight = 0
-	is_reverse_engineerable = no
-	weight_modifier = { factor = 0 }
-	ai_weight = { factor = 0 }
+	icon = "tech_spaceport_2"
 }
 
 
@@ -155,12 +116,8 @@ tech_tfw_adv_weapons = {
 	cost = 0
 	tier = 0
 	category = { materials }
-	is_rare = yes
-	prerequisites = { "tech_spaceport_6" "tech_darkmatter_power" }
 	weight = 0
-	is_reverse_engineerable = no
-	weight_modifier = { factor = 0 }
-	ai_weight = { factor = 0 }
+	icon = "tech_spaceport_2"
 }
 
 tech_tfw_rapid_cell_replication = {
@@ -168,12 +125,8 @@ tech_tfw_rapid_cell_replication = {
 	cost = 0
 	tier = 0
 	category = { biology }
-	is_rare = yes
-	prerequisites = { "tech_gene_tailoring" }
 	weight = 0
-	is_reverse_engineerable = no
-	weight_modifier = { factor = 0 }
-	ai_weight = { factor = 0 }
+	icon = "tech_spaceport_2"
 }
 
 tech_tfw_focused_psi_flows = {
@@ -181,10 +134,6 @@ tech_tfw_focused_psi_flows = {
 	cost = 0
 	tier = 0
 	category = { psionics }
-	is_rare = yes
-	prerequisites = { "tech_telepathy" }
 	weight = 0
-	is_reverse_engineerable = no
-	weight_modifier = { factor = 0 }
-	ai_weight = { factor = 0 }
+	icon = "tech_spaceport_2"
 }
