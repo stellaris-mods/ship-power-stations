@@ -5,6 +5,11 @@
 # AND (2) we use a _different file name_ for the techs,
 # the mod aboves techs will _overwrite_ these fake ones.
 #
+# What also needs to be true is that this file needs to load
+# _before_ the original in natural sort order by filename.
+# Which it does. TFWs file is "tfw_techs_reactors.txt", which means
+# it loads after.
+#
 # If the mod above is _not_ installed, this file
 # allows our components to depend on these technologies
 # and (a) produce no error log output, and (b) never
