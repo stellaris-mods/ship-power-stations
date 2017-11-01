@@ -8,6 +8,7 @@ return {
 	remote_file_id = 776095610,
 	readme = "readme.md",
 	steambb = "steam.bbcode",
+	originalUploader = "folk",
 	-- stlrel uses git-archive, which means that any files in
 	-- .gitignore are not included. If you want to include any,
 	-- you need to add relative paths here.
