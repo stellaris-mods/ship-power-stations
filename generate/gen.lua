@@ -28,10 +28,10 @@ local LICENSE = [[
 -- make a new file that contains your reactor data and add it below.
 -- The order does not matter, you can insert it anywhere.
 local _REACTORS = {
-	"reactors.vanilla",
-	"reactors.nsc",
-	"reactors.nh-shipcomponents",
-	"reactors.tfw-bosp",
+	"reactors/vanilla",
+	"reactors/nsc",
+	"reactors/nh-shipcomponents",
+	"reactors/tfw-bosp",
 }
 
 -- ADDING SUPPORT FOR NEW SHIP TYPES
@@ -39,18 +39,18 @@ local _REACTORS = {
 -- make a new file that contains your ship data and add it below.
 -- The order does not matter, you can insert it anywhere.
 local _SHIPS = {
-	"ships.vanilla",
-	"ships.isbs",
-	"ships.necro991",
-	"ships.nsc",
-	"ships.psicopro",
-	"ships.realships",
-	"ships.scx",
-	"ships.st-resurgent",
-	"ships.stellar-expansion",
-	"ships.swes",
-	"ships.swrs",
-	"ships.zhow",
+	"ships/vanilla",
+	"ships/isbs",
+	"ships/necro991",
+	"ships/nsc",
+	"ships/psicopro",
+	"ships/realships",
+	"ships/scx",
+	"ships/st-resurgent",
+	"ships/stellar-expansion",
+	"ships/swes",
+	"ships/swrs",
+	"ships/zhow",
 }
 
 -- If you came here to add support for your ships or reactors,
@@ -70,7 +70,7 @@ local _FILE_L10N = "powah_stations_l_%s.yml"
 local _ships = {}
 do
 	for _, id in next, _SHIPS do
-		local add = require(id)
+		local add = loadfile(id .. ".lua")()
 		for k, slots in pairs(add) do
 			local s = slots[1] + (slots[2] * 2) + (slots[3] * 4)
 			_ships[#_ships + 1] = { k, s }
@@ -170,7 +170,7 @@ utility_component_template = {
 }
 ]]
 	for _, supplier in next, _REACTORS do
-		local add = require(supplier)
+		local add = loadfile(supplier .. ".lua")()
 		for _, data in next, add do
 			data.cost = data.power / data.cost
 			_reactorData[#_reactorData+1] = data
