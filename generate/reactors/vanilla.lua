@@ -70,7 +70,7 @@ return {
 		power = 35,
 		cost = 30,
 		tech = "tech_powah_6",
-		icons = "	",
+		icons = "GFX_ship_part_enigmatic_power_core",
 		name = "Enigmatic Station",
 	},
 }
