@@ -4,7 +4,7 @@ return {
 	name = "Ship Power Stations",
 	tags = { "Graphics", "Fixes", "Technologies" },
 	picture = "thumb.png",
-	supported_version = "1.8.*",
+	supported_version = "1.9.*",
 	remote_file_id = 776095610,
 	readme = "readme.md",
 	steambb = "steam.bbcode",
