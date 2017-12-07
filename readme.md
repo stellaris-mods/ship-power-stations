@@ -7,11 +7,7 @@ Steam description transliterated from `steam.bbcode` by [our release script](htt
 It never made much sense to me that the ships didn't have built\-in power plants\!
 So this mod adds a fixed power station mount to all military\-class hulls, including the military stations :\-)
 
-## Want to take over this mod?
-I hang out on the [NSC Discord server](https://discord\.gg/K9jUfws%20), almost every day \- even though IRC is far superior to this dogshit called Discord\. If you want to talk to me, you need to @\-mention me, and I ignore most of the channels on the server except the modding\-discussion one\.
-If you want to take over ownership of this addon or any other in my profile, that would be awesome\. And you can obviously ask me anything on Discord\.
-
-**I do not read comments or forums on Steam any more\. I can only be reached on Discord\.**
+**I do not read comments or forums on Steam any more\. I can only be reached on Github\.**
 
 ## Built\-in support
 
