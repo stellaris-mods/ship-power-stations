@@ -115,7 +115,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		NOT = { has_technology = "tech_powah_6" }
-		has_technology = "tech_enigmatic_power_core"
+		has_technology = "tech_dark_matter_power_core"
 	}
 	immediate = {
 		give_technology = {

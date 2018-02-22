@@ -87,5 +87,5 @@ tech_powah_6 = {
 	category = { voidcraft }
 	tier = 3
 	is_reverse_engineerable = no
-	prerequisites = { "tech_enigmatic_power_core" }
+	prerequisites = { "tech_dark_matter_power_core" }
 }
