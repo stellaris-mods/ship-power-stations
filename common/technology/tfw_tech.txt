@@ -22,7 +22,6 @@ tech_fusion_power_energon = {
 	tier = 0
 	category = { particles }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_antimatter_power_optimized = {
@@ -31,7 +30,6 @@ tech_antimatter_power_optimized = {
 	tier = 0
 	category = { particles }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_darkmatter_power = {
@@ -40,7 +38,6 @@ tech_darkmatter_power = {
 	tier = 0
 	category = { particles }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_darkmatter_power_optimized = {
@@ -49,7 +46,6 @@ tech_darkmatter_power_optimized = {
 	tier = 0
 	category = { particles }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_singularity_power = {
@@ -58,7 +54,6 @@ tech_singularity_power = {
 	tier = 0
 	category = { particles }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_tachyon_power = {
@@ -67,7 +62,6 @@ tech_tachyon_power = {
 	tier = 0
 	category = { particles }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_wimp_power = {
@@ -76,7 +70,6 @@ tech_wimp_power = {
 	tier = 0
 	category = { particles }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_singularity_power_opt = {
@@ -85,7 +78,6 @@ tech_singularity_power_opt = {
 	tier = 0
 	category = { particles }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_bio_power_1 = {
@@ -94,7 +86,6 @@ tech_bio_power_1 = {
 	tier = 0
 	category = { biology }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_psi_power_1 = {
@@ -103,7 +94,6 @@ tech_psi_power_1 = {
 	tier = 0
 	category = { psionics }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_bio_power_2 = {
@@ -112,7 +102,6 @@ tech_bio_power_2 = {
 	tier = 0
 	category = { biology }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 
@@ -122,7 +111,6 @@ tech_tfw_adv_weapons = {
 	tier = 0
 	category = { materials }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_tfw_rapid_cell_replication = {
@@ -131,7 +119,6 @@ tech_tfw_rapid_cell_replication = {
 	tier = 0
 	category = { biology }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_tfw_focused_psi_flows = {
@@ -140,5 +127,4 @@ tech_tfw_focused_psi_flows = {
 	tier = 0
 	category = { psionics }
 	weight = 0
-	icon = "tech_spaceport_2"
 }

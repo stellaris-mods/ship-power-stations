@@ -18,7 +18,6 @@ tech_graviton_power = {
 	cost = 0
 	tier = 0
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_dark_matter_power = {
@@ -27,7 +26,6 @@ tech_dark_matter_power = {
 	cost = 0
 	tier = 0
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_adv_zero_point_power = {
@@ -36,7 +34,6 @@ tech_adv_zero_point_power = {
 	cost = 0
 	tier = 0
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_multidimensional_power = {
@@ -45,7 +42,6 @@ tech_multidimensional_power = {
 	cost = 0
 	tier = 0
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_nsc_zero_point_power = {
@@ -54,7 +50,6 @@ tech_nsc_zero_point_power = {
 	cost = 0
 	tier = 0
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 tech_optimized_enigmatic_power = {
@@ -63,5 +58,4 @@ tech_optimized_enigmatic_power = {
 	cost = 0
 	tier = 0
 	weight = 0
-	icon = "tech_spaceport_2"
 }

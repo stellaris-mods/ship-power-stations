@@ -18,7 +18,6 @@ nhsc_tech_advzeropointreactor_1 = {
 	tier = 0
 	category = { particles }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 nhsc_tech_advzeropointreactor_2 = {
@@ -27,7 +26,6 @@ nhsc_tech_advzeropointreactor_2 = {
 	tier = 0
 	category = { particles }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 nhsc_tech_advzeropointreactor_3 = {
@@ -36,7 +34,6 @@ nhsc_tech_advzeropointreactor_3 = {
 	tier = 0
 	category = { particles }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
 
 nhsc_tech_enigmatic_power_2 = {
@@ -45,5 +42,4 @@ nhsc_tech_enigmatic_power_2 = {
 	tier = 0
 	category = { particles }
 	weight = 0
-	icon = "tech_spaceport_2"
 }
