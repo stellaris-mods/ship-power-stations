@@ -124,14 +124,6 @@ local ships = {
 }
 local NUM_VANILLA_HULLS = 4
 
-
--- Power/ Cost  = Cost per power
--- 10   / 5     = 2       - Fission
--- 15   / 10    = 1.5     - Fusion
--- 20   / 15    = 1.3333  - Cold Fusion
--- 25   / 20    = 1.25    - Antimatter
--- 30   / 25    = 1.2     - Zero Point
-
 local costPerPower = {}
 local powerPerSmallSlot = {}
 
