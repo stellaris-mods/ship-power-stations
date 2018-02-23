@@ -20,3 +20,4 @@ localisation/powah_stations_l_german.yml
 localisation/powah_stations_l_polish.yml
 localisation/powah_stations_l_russian.yml
 localisation/powah_stations_l_spanish.yml
+common/component_templates/util_powah_vanilla.txt

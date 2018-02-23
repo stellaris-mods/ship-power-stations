@@ -40,6 +40,7 @@ local _REACTORS = {
 -- The order does not matter, you can insert it anywhere.
 local _SHIPS = {
 	"ships/vanilla",
+	"ships/vanilla-full",
 	"ships/isbs",
 	"ships/necro991",
 	"ships/nsc",
@@ -102,6 +103,8 @@ local _PATH_L10N = "../localisation/"
 local _FILE_COMPONENTS = "util_powah_%d.txt"
 local _FILE_L10N = "powah_stations_l_%s.yml"
 
+local _vanillaSets = {}
+local _vanillaShips = loadfile("ships/vanilla.lua")()
 local _ships = {}
 do
 	for _, id in next, _SHIPS do
@@ -154,6 +157,10 @@ do
 			end
 		end
 		table.insert(_shipsPerSet[best], ship)
+		if _vanillaShips[ship] then
+			if not _vanillaSets[best] then _vanillaSets[best] = {} end
+			table.insert(_vanillaSets[best], ship)
+		end
 		if (best - slots) ~= 0 then
 			print(msgBest:format(slots, best, best - slots, ship))
 		else
@@ -187,6 +194,7 @@ end
 for _, set in next, _sets do
 	os.remove(_PATH_COMPONENTS .. _FILE_COMPONENTS:format(set))
 end
+os.remove(_PATH_COMPONENTS .. "util_powah_vanilla.txt")
 
 local _reactorData = {}
 do
@@ -202,7 +210,7 @@ utility_component_template = {
 	ai_weight = { weight = [index] }
 	size_restriction = { [size] }
 	prerequisites = { "[tech]" }
-	component_set = "powerstation_components"
+	component_set = "[setname]"
 }
 ]]
 	for _, supplier in next, _REACTORS do
@@ -230,6 +238,8 @@ utility_component_template = {
 		if m == 0 then return r end
 		return r + 5 - m
 	end
+	local vanilla = io.open(_PATH_COMPONENTS .. "util_powah_vanilla.txt", "a+")
+	vanilla:write(LICENSE)
 
 	for _, set in next, _sets do
 		local f = io.open(_PATH_COMPONENTS .. _FILE_COMPONENTS:format(set), "a+")
@@ -239,6 +249,7 @@ utility_component_template = {
 			local power = calculatePower(set, data.powerPerSmallSlot)
 			local entryCost = calculateCost(power, data.costPerPower)
 
+			comp = comp:gsub("%[setname%]", "powerstation_components")
 			comp = comp:gsub("%[key%]", set)
 			comp = comp:gsub("%[index%]", index)
 			comp = comp:gsub("%[icon%]", data.icons)
@@ -248,9 +259,23 @@ utility_component_template = {
 			comp = comp:gsub("%[size%]", table.concat(_shipsPerSet[set], " "))
 
 			f:write(comp)
+
+			if not data.vanilla and _vanillaSets[set] then
+				local v = entryTmpl
+				v = v:gsub("%[setname%]", "power_core")
+				v = v:gsub("%[key%]", "VANILLA_" .. set)
+				v = v:gsub("%[index%]", index)
+				v = v:gsub("%[icon%]", data.icons)
+				v = v:gsub("%[tech%]", data.tech)
+				v = v:gsub("%[cost%]", entryCost)
+				v = v:gsub("%[power%]", power)
+				v = v:gsub("%[size%]", table.concat(_vanillaSets[set], " "))
+				vanilla:write(v)
+			end
 		end
 		f:close()
 	end
+	vanilla:close()
 end
 
 do
@@ -276,6 +301,13 @@ do
 					f:write( ("POWAH_REACTOR_%d_%d: %q\n"):format(set, index, data.name[lang] or data.name.english) )
 				else
 					f:write( ("POWAH_REACTOR_%d_%d: %q\n"):format(set, index, data.name) )
+				end
+				if not data.vanilla and _vanillaSets[set] then
+					if type(data.name) == "table" then
+						f:write( ("POWAH_REACTOR_VANILLA_%d_%d: %q\n"):format(set, index, data.name[lang] or data.name.english) )
+					else
+						f:write( ("POWAH_REACTOR_VANILLA_%d_%d: %q\n"):format(set, index, data.name) )
+					end
 				end
 			end
 			f:write("\n")

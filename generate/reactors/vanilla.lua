@@ -19,6 +19,7 @@
 return {
 	{
 		level = 1,
+		vanilla = true,
 		tech = "tech_powah_1",
 		icons = "GFX_ship_part_reactor_1",
 		name = {
@@ -28,30 +29,35 @@ return {
 	},
 	{
 		level = 2,
+		vanilla = true,
 		tech = "tech_powah_2",
 		icons = "GFX_ship_part_reactor_2",
 		name = "Fusion Station",
 	},
 	{
 		level = 3,
+		vanilla = true,
 		tech = "tech_powah_3",
 		icons = "GFX_ship_part_reactor_3",
 		name = "Cold Fusion Station",
 	},
 	{
 		level = 4,
+		vanilla = true,
 		tech = "tech_powah_4",
 		icons = "GFX_ship_part_reactor_4",
 		name = "Antimatter Station",
 	},
 	{
 		level = 5,
+		vanilla = true,
 		tech = "tech_powah_5",
 		icons = "GFX_ship_part_reactor_5",
 		name = "Zero Point Station",
 	},
 	{
 		level = 6,
+		vanilla = true,
 		tech = "tech_powah_6",
 		icons = "GFX_ship_part_enigmatic_power_core",
 		name = "Enigmatic Station",
